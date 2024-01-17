@@ -10,8 +10,9 @@ const App = () => {
   const apiKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
 
   const cities = [
-    'Oakland',
     'Modesto',
+    'Boston',
+    'Dallas',
     'New York',
     'Los Angeles',
     'London',
@@ -23,7 +24,7 @@ const App = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`);
       setWeatherData(response.data);
       setError(null);
     } catch (error) {
@@ -33,7 +34,7 @@ const App = () => {
     }
   };
 
-  // set initial city on component mount
+
   useEffect(() => {
     setCity(cities[0]);
   }, []); 
@@ -62,7 +63,7 @@ const App = () => {
 
       {weatherData && (
         <div id="weatherInfo">
-          <p>Temperature: {weatherData.main.temp}°C</p>
+          <p>Temperature: {Math.round(weatherData.main.temp)}°F</p>
           <p>Description: {weatherData.weather[0].description}</p>
           <img src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`} alt="Weather Icon" />
         </div>
