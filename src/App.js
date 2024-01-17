@@ -21,6 +21,7 @@ const App = () => {
     'London',
     'Paris',
     'Tokyo',
+    'Osaka',
   ];
 
   const handleFormSubmit = async (event) => {
