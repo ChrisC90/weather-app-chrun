@@ -15,6 +15,7 @@ const App = () => {
     'Dallas',
     'New York',
     'Los Angeles',
+    'Phnom Penh',
     'London',
     'Paris',
     'Tokyo',
