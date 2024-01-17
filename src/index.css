@@ -11,3 +11,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  text-align: center;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+form {
+  margin-top: 20px;
+}
+
+#weatherInfo {
+  margin-top: 20px;
+}
+
+#weatherInfo img {
+  width: 100px;
+  height: 100px; 
+  image-rendering: pixelated;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi) {
+  #weatherInfo img {
+    width: 200px; 
+    height: 200px; 
+  }
+}
+
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
