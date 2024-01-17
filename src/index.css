@@ -27,17 +27,9 @@ form {
 }
 
 #weatherInfo img {
-  width: 100px;
-  height: 100px; 
-  image-rendering: pixelated;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-       only screen and (min-resolution: 192dpi) {
-  #weatherInfo img {
-    width: 200px; 
-    height: 200px; 
-  }
+  width: 200px; 
+  height: 200px; 
+  image-rendering: auto;
 }
 
 
