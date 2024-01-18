@@ -23,7 +23,6 @@ const App = () => {
     'Los Angeles',
     'Phnom Penh',
     'London',
-    'Paris',
     'Tokyo',
     'Osaka',
     'Columbia',
@@ -33,28 +32,26 @@ const App = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
+
+      // make API request to OpenWeatherMap && updating weather data state and clear error. prevents the default form behavior //
     try {
-      // make API request to OpenWeatherMap //
       const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`);
-      
-      // update weather data state and clear error //
       setWeatherData(response.data);
       setError(null);
     } catch (error) {
-      // log error and update state with error message //
       console.error('Error fetching weather data:', error);
       setWeatherData(null);
       setError('Error fetching weather data. Please try again.');
     }
   };
 
-      // sets the initial city on component mount //
+      // setting the initial city to the first city in the cities array //
   useEffect(() => {
     setCity(cities[0]);
   }, []); 
 
 
-    // JSX structure for the component //
+    // JSX structure for the component includes a form with drop down menu for cities, display weather, submit button and error message //
   return (
     <div className="App">
       <h1>Weather Lookup App</h1>
