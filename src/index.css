@@ -27,9 +27,9 @@ form {
 }
 
 #weatherInfo img {
-  width: 200px; 
-  height: 200px; 
-  image-rendering: auto;
+  width: 10vw; 
+  height: 10vw; 
+  image-rendering: auto; 
 }
 
 
